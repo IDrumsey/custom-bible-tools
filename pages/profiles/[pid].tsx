@@ -15,26 +15,26 @@ const Profile = ({
     const router = useRouter()
     const { pid: userId } = router.query
 
-    const [user, userSetter] = useState<User>()
+    const [user, userSetter] = useState<any>()
 
 
     useEffect(() => {
 
         const handleUserIdSet = async () => {
+
+            let userIdToShow = userId
             if(userId == 'me') {
                 // show currently logged in user
                     const { data, error } = await supabase.auth.getSession()
-                    if(data && data.session && data.session.user) {
-                        userSetter(data.session.user)
+                    if(data?.session?.user) {
+                        userIdToShow = data.session.user.id
                     }
             }
 
-            else {
-                const { data, error } = await supabase.from('profiles').select().eq('id', userId)
-                
-                if(data && data.length == 1) {
-                    userSetter(data[0])
-                }
+            const { data, error } = await supabase.from('profiles').select().eq('id', userIdToShow)
+            
+            if(data && data.length == 1) {
+                userSetter(data[0])
             }
         }
 
@@ -51,7 +51,11 @@ const Profile = ({
     
     return (
         <>
-            <h4>{user?.user_metadata.first_name} {user?.user_metadata.last_name}</h4>
+            {
+                user &&
+
+                <h4>{user.first_name} {user.last_name}</h4>
+            }
         </>
     )
 }
