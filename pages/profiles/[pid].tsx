@@ -23,12 +23,18 @@ const Profile = ({
         const handleUserIdSet = async () => {
             if(userId == 'me') {
                 // show currently logged in user
-                    // get the logged in user's id
                     const { data, error } = await supabase.auth.getSession()
                     if(data && data.session && data.session.user) {
                         userSetter(data.session.user)
                     }
-                // const userFound = await getUser()
+            }
+
+            else {
+                const { data, error } = await supabase.from('profiles').select().eq('id', userId)
+                
+                if(data && data.length == 1) {
+                    userSetter(data[0])
+                }
             }
         }
 
