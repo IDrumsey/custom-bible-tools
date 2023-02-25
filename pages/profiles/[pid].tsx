@@ -26,6 +26,10 @@ const Profile = ({
             if(userId == 'me') {
                 // show currently logged in user
                     const { data, error } = await supabase.auth.getSession()
+                    if(!data.session) {
+                        // no session -> reroute to users page
+                        router.push('/users')
+                    }
                     if(data?.session?.user) {
                         userIdToShow = data.session.user.id
                     }
