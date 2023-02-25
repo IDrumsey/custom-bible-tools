@@ -9,6 +9,9 @@
     - https://www.youtube.com/watch?v=EOppukfgL_o
     - https://www.youtube.com/watch?v=OAbYgz9nnxA
 
+- can use useUser
+    - https://stackoverflow.com/questions/74998932/i-am-trying-to-check-if-a-user-is-logged-in-using-next-js-and-supabase-but-it-is
+
 
 - yup stuff
     - https://github.com/jquense/yup
