@@ -28,4 +28,8 @@
 
 
 
+- using bible api - https://scripture.api.bible/
+
+
+
 ## Stale cites
