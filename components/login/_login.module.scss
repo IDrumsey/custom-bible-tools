@@ -1,0 +1,48 @@
+.signin-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+
+    input {
+        padding: 15px 10px;
+        background-color: #bebebe;
+        color: #000;
+        text-align: center;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    .sign-in-btn {
+        padding: 10px;
+        cursor: pointer;
+        background-color: #00524a;
+        color: #e4e4e4;
+    }
+
+    input,
+    .sign-in-btn {
+        width: 50%;
+        margin: auto;
+        font-weight: 600;
+        border-radius: 2px;
+        border: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .signin-form-wrapper {
+        width: 100%;
+        margin-top: auto;
+    }
+
+    .signin-form-wrapper > input {
+        width: 100%;
+    }
+
+    .sign-in-btn {
+        width: 100%;
+    }
+}

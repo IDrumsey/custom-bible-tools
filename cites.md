@@ -27,8 +27,15 @@
     - https://nextjs.org/
 
 
+- using mui - https://mui.com/
+
+- using yup with react-hook-form - https://github.com/react-hook-form/resolvers
+
+
 
 - using bible api - https://scripture.api.bible/
+
+- nextjs stuff - https://nextjs.org/
 
 
 

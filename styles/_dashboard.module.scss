@@ -1,0 +1,37 @@
+#dashboard-wrapper {
+    color: #e4e4e4;
+}
+
+#welcome-msg {
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#sign-out-btn {
+    display: block;
+    padding: 15px 50px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: rgb(149, 0, 60);
+    border: none;
+    border-radius: 2px;
+    color: #e4e4e4;
+    margin: auto;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+
+    #sign-out-btn {
+        width: 100%;
+    }
+
+}
+
+#sign-out-btn:hover {
+    filter: brightness(1.2);
+}
