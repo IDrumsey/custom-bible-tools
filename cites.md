@@ -42,6 +42,9 @@
 - middleware protected routes - https://engineering.udacity.com/protected-routes-using-next-js-edge-middleware-supabase-f197ba7f503c
 - nextjs and supabase authentication blog - https://www.misha.wtf/blog/supabase-auth-next-13#pages-and-routes
 
+- use 8px intervals for padding and spacing and stuff - https://www.youtube.com/watch?v=YTc8YXtHx5E
+- don't use font size under 12px - https://www.youtube.com/shorts/BHBQt9mm-CM
+
 
 
 ## Stale cites
