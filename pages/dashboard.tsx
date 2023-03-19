@@ -7,6 +7,7 @@ import PostCard from '@Components/post-card/post-card'
 import { PostModel } from '@lib/models'
 import { ezPromise } from '@lib/utility'
 import axios from 'axios'
+import Link from 'next/link'
 
 
 type Props = {
@@ -75,6 +76,11 @@ const NewComponent = ({
 
             <>
                 <h1 id={styles['welcome-msg']}>Welcome {user.email}</h1>
+
+
+                {/* create post button */}
+                
+                <div><Link href='/posts/new'>Create New Post</Link></div>
 
                 <div id="post-grid">
                     {

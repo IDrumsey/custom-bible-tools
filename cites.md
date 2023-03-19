@@ -46,5 +46,8 @@
 - don't use font size under 12px - https://www.youtube.com/shorts/BHBQt9mm-CM
 
 
+- about supabase RLS and policies - https://www.youtube.com/watch?v=WAa3a-HxLVs
+
+
 
 ## Stale cites
