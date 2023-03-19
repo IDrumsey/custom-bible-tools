@@ -39,4 +39,9 @@
 
 
 
+- middleware protected routes - https://engineering.udacity.com/protected-routes-using-next-js-edge-middleware-supabase-f197ba7f503c
+- nextjs and supabase authentication blog - https://www.misha.wtf/blog/supabase-auth-next-13#pages-and-routes
+
+
+
 ## Stale cites

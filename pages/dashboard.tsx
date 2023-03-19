@@ -3,6 +3,10 @@ import styles from '@Styles/_dashboard.module.scss'
 import { useSupabaseClient, useUser } from '@supabase/auth-helpers-react'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
+import PostCard from '@Components/post-card/post-card'
+import { PostModel } from '@lib/models'
+import { ezPromise } from '@lib/utility'
+import axios from 'axios'
 
 
 type Props = {
@@ -24,6 +28,24 @@ const NewComponent = ({
 
 
     const [loadingDelayOver, loadingDelayOverSetter] = useState(false)
+
+    const [userPosts, userPostsSetter] = useState<PostModel[]>([])
+
+
+    useEffect(() => {
+        const asyncHandler = async () => {
+            if(user) {
+                console.log(user.id)
+                const { data: postsFound, error: postsFetchError } = await ezPromise(axios.get(`/api/posts/posts?userId=${user.id}`).then(res => res.data))
+
+                if(!postsFetchError) {
+                    userPostsSetter(postsFound.posts)
+                }
+            }
+        }
+
+        asyncHandler()
+    }, [user])
 
 
     useEffect(() => {
@@ -53,6 +75,14 @@ const NewComponent = ({
 
             <>
                 <h1 id={styles['welcome-msg']}>Welcome {user.email}</h1>
+
+                <div id="post-grid">
+                    {
+                        userPosts.map((userPost, i) => {
+                            return <PostCard key={i} post={userPost} />
+                        })
+                    }
+                </div>
 
                 <button id={styles['sign-out-btn']} onClick={e => onSignOutBtnClick()}>Sign out</button>
             </>

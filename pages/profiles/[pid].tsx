@@ -1,4 +1,4 @@
-import { supabase } from '@lib/supabaseClient'
+import supabase from '@lib/supabase-browser'
 import { User } from '@supabase/supabase-js'
 // import { useUser } from '@supabase/auth-helpers-react'
 import { useRouter } from 'next/router'
