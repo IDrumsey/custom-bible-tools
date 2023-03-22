@@ -8,11 +8,6 @@
 
 # Custom Bible Tools
 
-</br>
-
-
-## Quick Nav
-
 - [Request a new feature](#how-to-request-a-new-feature)
 
 </br>
