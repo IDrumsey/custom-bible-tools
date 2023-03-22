@@ -9,6 +9,7 @@
 # Custom Bible Tools
 
 - [Request a new feature](#how-to-request-a-new-feature)
+- [Report a bug](#report-a-bug)
 
 </br>
 </br>
@@ -25,5 +26,19 @@
 2. Click on New Issue
 
 3. Click on "Get Started" on the right of "Feature request"
+
+4. Fill in the issue and submit the issue
+
+
+
+## Report a bug
+
+1. Go to the repository's issues tab
+
+![Reporting a bug - Step 1](/public/new-feature-request-step-1.png)
+
+2. Click on New Issue
+
+3. Click on "Get Started" on the right of "Bug report"
 
 4. Fill in the issue and submit the issue
