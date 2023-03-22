@@ -49,5 +49,12 @@
 - about supabase RLS and policies - https://www.youtube.com/watch?v=WAa3a-HxLVs
 
 
+- aligning markdown image
+    - https://stackoverflow.com/a/12118349/17712310
+    - https://www.w3.org/TR/html401/present/graphics.html
+    - https://gist.github.com/DavidWells/7d2e0e1bc78f4ac59a123ddf8b74932d
+    - https://codinhood.com/nano/git/center-images-text-github-readme
+
+
 
 ## Stale cites
