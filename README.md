@@ -8,9 +8,20 @@
 
 # Custom Bible Tools
 
+</br>
 
 
-## Have an idea? Request a New Feature
+## Quick Nav
+
+- [Request a new feature](#how-to-request-a-new-feature)
+
+</br>
+</br>
+</br>
+</br>
+</br>
+
+## How to request a new feature
 
 1. Go to the repository's issues tab
 
