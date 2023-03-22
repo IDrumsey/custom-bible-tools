@@ -57,4 +57,12 @@
 
 
 
+- markdown images
+    - https://www.youtube.com/watch?v=Mh0Of4LzEfk
+
+
+- creating github issue templates
+    - https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository
+
+
 ## Stale cites
