@@ -35,8 +35,6 @@
 
 - using bible api - https://scripture.api.bible/
 
-- nextjs stuff - https://nextjs.org/
-
 
 
 - middleware protected routes - https://engineering.udacity.com/protected-routes-using-next-js-edge-middleware-supabase-f197ba7f503c
@@ -72,6 +70,8 @@
 
 
 - using momentjs - https://momentjs.com/
+
+- get all rows in supabase table - https://egghead.io/lessons/supabase-query-data-from-supabase-using-next-js
 
 
 ## Stale cites
