@@ -1,12 +1,13 @@
-import { PostModel } from '@lib/models'
 import { ezPromise } from '@lib/utility'
 import axios from 'axios'
 import type { NextApiRequest, NextApiResponse } from 'next'
 import * as yup from 'yup'
 
+import supabaseServer from '@lib/supabase-server'
+
 
 type Data = {
-    posts: PostModel
+    posts: any
 }
 
 |
@@ -22,6 +23,10 @@ const inputDataValidationSchema = yup.object().shape({
 
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
+
+    const supabase = supabaseServer()
+
+    const { data } = await supabase.from('Posts').select('*')
 
     // validate input data
     const { data: validatedInputData, error: inputDataValidationError } = await ezPromise(inputDataValidationSchema.validate(req.body || {}))

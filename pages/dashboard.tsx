@@ -4,10 +4,10 @@ import { useSupabaseClient, useUser } from '@supabase/auth-helpers-react'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import PostCard from '@Components/post-card/post-card'
-import { PostModel } from '@lib/models'
 import { ezPromise } from '@lib/utility'
 import axios from 'axios'
 import Link from 'next/link'
+import { AiOutlinePlus } from 'react-icons/ai'
 
 
 type Props = {
@@ -30,17 +30,17 @@ const NewComponent = ({
 
     const [loadingDelayOver, loadingDelayOverSetter] = useState(false)
 
-    const [userPosts, userPostsSetter] = useState<PostModel[]>([])
+    const [userPosts, userPostsSetter] = useState<any[]>([])
 
 
     useEffect(() => {
         const asyncHandler = async () => {
             if(user) {
                 console.log(user.id)
-                const { data: postsFound, error: postsFetchError } = await ezPromise(axios.get(`/api/posts/posts?userId=${user.id}`).then(res => res.data))
+                const { data: postsFound, error: postsFetchError } = await ezPromise(fetchUserPosts(user.id))
 
                 if(!postsFetchError) {
-                    userPostsSetter(postsFound.posts)
+                    userPostsSetter(postsFound)
                 }
             }
         }
@@ -68,6 +68,37 @@ const NewComponent = ({
         router.push('/auth')
     }
 
+
+
+    async function fetchUserPosts(userId: string) {
+        /**
+         * Get all the posts for whichever userId is provided
+         */
+        
+        const { data: postsFound, error: postsFetchError } = await supabaseClient.from('Posts').select().eq('author_id', userId)
+
+        if(postsFetchError) {
+            throw postsFetchError
+        }
+
+        return postsFound
+    }
+
+
+
+    function onCreatePostBtnClick() {
+        router.push('/posts/new')
+    }
+
+
+    function onPostCardClick(postId: string) {
+        router.push(`/posts/${postId}`)
+    }
+
+
+
+
+
     return (
         <div id={styles['dashboard-wrapper']}>
         
@@ -78,14 +109,19 @@ const NewComponent = ({
                 <h1 id={styles['welcome-msg']}>Welcome {user.email}</h1>
 
 
-                {/* create post button */}
-                
-                <div><Link href='/posts/new'>Create New Post</Link></div>
+                <div id={styles['quick-action-buttons']}>
 
-                <div id="post-grid">
+                    {/* create post button */}
+                    <div id={styles['create-new-post-btn']} onClick={e => onCreatePostBtnClick()}>
+                        <AiOutlinePlus color="#C7C7C7" />
+                    </div>
+                    
+                </div>
+
+                <div id={styles['post-grid']}>
                     {
                         userPosts.map((userPost, i) => {
-                            return <PostCard key={i} post={userPost} />
+                            return <PostCard key={i} post={userPost} onClick={() => onPostCardClick(userPost.id)} />
                         })
                     }
                 </div>

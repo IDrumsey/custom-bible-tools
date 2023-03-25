@@ -24,14 +24,61 @@
     cursor: pointer;
 }
 
+
+#sign-out-btn:hover {
+    filter: brightness(1.2);
+}
+
+
+#post-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+
+#quick-action-buttons {
+    display: flex;
+    column-gap: 32px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    padding: 0 16px;
+}
+
+
+#create-new-post-btn {
+    padding: 8px;
+    border-radius: 100%;
+    background-color: #263750;
+    $size: 35px;
+    width: $size;
+    height: $size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: filter 50ms linear;
+}
+
+#create-new-post-btn:hover {
+    filter: brightness(1.1);
+}
+
+
 @media screen and (max-width: 500px) {
 
     #sign-out-btn {
         width: 100%;
     }
 
-}
 
-#sign-out-btn:hover {
-    filter: brightness(1.2);
+    #quick-action-buttons {
+        padding: 8px;
+    }
+
+
+    #post-grid {
+        grid-template-columns: 1fr;
+    }
+
 }

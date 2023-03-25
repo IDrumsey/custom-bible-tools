@@ -36,5 +36,5 @@ export default async function handler(req: NextRequest) {
 
 
 export const config = {
-    matcher: '/dashboard',
+    matcher: ['/dashboard', '/posts/new'],
 }

@@ -1,4 +1,3 @@
-import { PostModel } from '@lib/models'
 import { ezPromise } from '@lib/utility'
 import { useUser } from '@supabase/auth-helpers-react'
 import axios from 'axios'
@@ -8,19 +7,21 @@ import moment from 'moment'
 
 
 type Props = {
-    post?: PostModel
+    post?: any
     postId?: number
+    onClick?: () => void
 }
 
 const PostCard = ({
     post,
-    postId
+    postId,
+    onClick
 }: Props) => {
 
     const user = useUser()
 
 
-    const [postToDisplay, postToDisplaySetter] = useState<PostModel>()
+    const [postToDisplay, postToDisplaySetter] = useState<any>()
 
 
     useEffect(() => {
@@ -46,19 +47,24 @@ const PostCard = ({
     }, [])
 
     return (
-        <div className={styles['post-card']}>
+        <div className={styles['post-card']} onClick={() => {
+            if(onClick) {
+                onClick()
+            }
+        }}>
             {
                 postToDisplay ?
 
                 <>
                 {/* title */}
-                <h5>{postToDisplay.title}</h5>
+                <h5 className={styles['post-title']}>{postToDisplay.title}</h5>
+
+                {/* publish date */}
+                <p className={styles['post-publish-date']}>{moment(postToDisplay.created_at).format('MMM DD, YYYY')} at {moment(postToDisplay.created_at).format('h:mma')}</p>
 
                 {/* description */}
-                <p>{postToDisplay.summary}</p>
+                <p className={styles['post-description']}>{postToDisplay.description}</p>
 
-                {/* last updated */}
-                <p>Last updated on: {moment().format('MMM Do YYYY')} at {moment().format('h:m')}</p>
                 </>
 
                 :

@@ -65,4 +65,13 @@
     - https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository
 
 
+
+- how to fix bug where width 100vw overflows page content behind scrollbar
+    - https://stackoverflow.com/a/30504010
+    - https://css-tricks.com/scrollbar-reflowing/
+
+
+- using momentjs - https://momentjs.com/
+
+
 ## Stale cites
