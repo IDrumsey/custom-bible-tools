@@ -1,10 +1,12 @@
 import supabase from '@lib/supabase-client'
 import { ezPromise } from '@lib/utility'
-import styles from '@Styles/_user-post.module.scss'
+import styles from './_user-post.module.scss'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import moment from 'moment'
+
+import { FaPencilAlt } from 'react-icons/fa'
 
 
 type Props = {
@@ -49,20 +51,37 @@ const PostPage = ({
 
 
 
+
+
+    function onEditPostBtnClick() {
+
+    }
+
+
+
+
     return (
         <div style={{color: '#C1C1C1', padding: '24px 64px', marginTop: '32px'}}>
             {
                 post ?
 
-                <div style={{display: 'flex', flexDirection: 'column', rowGap: '16px'}}>
+                <div id={styles['post-wrapper']} style={{display: 'flex', flexDirection: 'column', rowGap: '16px'}}>
 
-                <h1>{post.title}</h1>
+                    <div id={styles['post-content']}></div>
 
-                <p>{moment().format('MMM DD, YYYY')} at {moment().format('h:ma')}</p>
+                    <div id={styles['post-options']}>
+                        <div id={styles['edit-post-btn']} onClick={e => onEditPostBtnClick()}>
+                            <FaPencilAlt id={styles['edit-post-btn-icon']} color="#C7C7C7" />
+                        </div>
+                    </div>
 
-                <p>{post.description}</p>
+                    <h1>{post.title}</h1>
 
-                <p>{post.content}</p>
+                    <p>{moment().format('MMM DD, YYYY')} at {moment().format('h:ma')}</p>
+
+                    <p>{post.description}</p>
+
+                    <p>{post.content}</p>
 
                 </div>
 

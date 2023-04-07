@@ -1,0 +1,39 @@
+#post-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+#post-options {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+
+
+
+#edit-post-btn {
+    padding: 12px;
+    border-radius: 100%;
+    background-color: #1a1a1acc;
+    $size: 35px;
+    width: $size;
+    height: $size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: filter 50ms linear;
+}
+
+#edit-post-btn-icon {
+    font-size: 25px;
+}
+
+#edit-post-btn:hover {
+    filter: brightness(1.1);
+}
+
+
+
