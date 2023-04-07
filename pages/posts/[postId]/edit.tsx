@@ -56,8 +56,6 @@ const EditPostPage = ({
                 setValue('description', post.description)
 
             setValue('content', post.content)
-
-            console.log(post)
         }
     }
 
@@ -117,7 +115,6 @@ const EditPostPage = ({
             description: formData.description,
             content: formData.content
         }).eq('id', postId).then(res => {
-            console.log(res)
             fetchPost()
         })
     }
