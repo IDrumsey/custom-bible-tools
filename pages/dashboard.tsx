@@ -92,7 +92,7 @@ const NewComponent = ({
 
 
     function onPostCardClick(postId: string) {
-        router.push(`/posts/${postId}`)
+        router.push(`/posts/${postId}/view`)
     }
 
 
