@@ -18,7 +18,7 @@ const PostPage = ({
 }: Props) => {
 
     const router = useRouter()
-    const { pid: postId } = router.query
+    const { postId } = router.query
 
 
     const [post, postSetter] = useState<any>()
@@ -54,7 +54,7 @@ const PostPage = ({
 
 
     function onEditPostBtnClick() {
-
+        router.push(`/posts/${postId}/edit`)
     }
 
 
