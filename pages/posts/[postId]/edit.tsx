@@ -48,6 +48,20 @@ const EditPostPage = ({
 
             const post = postsFound[0]
 
+            // check that the user is authenticated to edit the post
+            let userCanEditPost = false
+            const currentUser = await supabase.auth.getUser()
+            const signedInUserId = currentUser?.data?.user?.id
+            if(signedInUserId) {
+                if(signedInUserId == post.author_id) {
+                    userCanEditPost = true
+                }
+            }
+
+            if(!userCanEditPost) {
+                router.push(`/posts/${postId}/view`)
+            }
+
             postSetter(post)
 
             setValue('title', post.title)
