@@ -97,3 +97,27 @@
     outline: none;
     filter: brightness(1.2);
 }
+
+
+
+#right-side-quick-options {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+
+.quick-action-icon-btn {
+    color: #fafafa;
+    font-size: 30px;
+}
+
+
+#delete-quick-action-btn {
+    color: #b0073f;
+}
+
+#delete-quick-action-btn:hover {
+    filter: brightness(1.2);
+}

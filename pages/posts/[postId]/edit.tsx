@@ -5,6 +5,8 @@ import * as yup from 'yup'
 import supabase from '@lib/supabase-browser'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
+import IconButton from '@mui/material/IconButton'
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined'
 
 
 type Props = {
@@ -186,6 +188,31 @@ const EditPostPage = ({
 
 
 
+    async function deletePost() {
+        /**
+         * Attempts to delete this post
+         */
+
+
+        await supabase.from('Posts').delete().eq('id', postId)
+    }
+
+
+    function onDeletePostBtnClick() {
+        try {
+            deletePost().then(() => {
+                router.push('/dashboard')
+            })
+        }
+
+        catch(e) {
+            // display error message
+        }
+    }
+
+
+
+
     return (
         <div id={styles['new-post-wrapper']}>
 
@@ -214,7 +241,14 @@ const EditPostPage = ({
 
             </div>
 
-            <div id={styles['right-side-quick-options']}></div>
+            <div id={styles['right-side-quick-options']}>
+                <IconButton onClick={() => onDeletePostBtnClick()}>
+                    <DeleteOutlineOutlinedIcon
+                        id={styles['delete-quick-action-btn']}
+                        className={styles['quick-action-icon-btn']}
+                    />
+                </IconButton>
+            </div>
         </div>
     )
 }
