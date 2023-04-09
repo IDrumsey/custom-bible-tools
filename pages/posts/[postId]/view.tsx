@@ -77,9 +77,9 @@ const PostPage = ({
                         </div>
                     </div>
 
-                    <p>{post.description}</p>
+                    <p id={styles['post-description']}>{post.description}</p>
 
-                    <p>{post.content}</p>
+                    <p id={styles['post-content']}>{post.content}</p>
 
                 </div>
 
