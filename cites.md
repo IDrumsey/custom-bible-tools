@@ -73,5 +73,19 @@
 
 - get all rows in supabase table - https://egghead.io/lessons/supabase-query-data-from-supabase-using-next-js
 
+- using mui drawer - https://www.youtube.com/watch?v=wnCYd0l1OJw
+- changing mui drawer bg color - https://smartdevpreneur.com/how-to-customize-mui-drawer-size-color-and-elevation/
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Stale cites
