@@ -67,17 +67,15 @@ const PostPage = ({
 
                 <div id={styles['post-wrapper']} style={{display: 'flex', flexDirection: 'column', rowGap: '16px'}}>
 
-                    <div id={styles['post-content']}></div>
+                    <h1>{post.title}</h1>
+
+                    <p>{moment().format('MMM DD, YYYY')} at {moment().format('h:ma')}</p>
 
                     <div id={styles['post-options']}>
                         <div id={styles['edit-post-btn']} onClick={e => onEditPostBtnClick()}>
                             <FaPencilAlt id={styles['edit-post-btn-icon']} color="#C7C7C7" />
                         </div>
                     </div>
-
-                    <h1>{post.title}</h1>
-
-                    <p>{moment().format('MMM DD, YYYY')} at {moment().format('h:ma')}</p>
 
                     <p>{post.description}</p>
 
