@@ -191,6 +191,8 @@ const EditPostPage = ({
     async function deletePost() {
         /**
          * Attempts to delete this post
+         * 
+         * this should be converted to an api route
          */
 
 
@@ -207,6 +209,7 @@ const EditPostPage = ({
 
         catch(e) {
             // display error message
+            alert('Could not delete the post, try again later.')
         }
     }
 
